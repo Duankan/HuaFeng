@@ -24,6 +24,7 @@ public class ThreadDeadlock implements Runnable {
     public static Zhangsan zs = new Zhangsan();
     public static Lisi ls = new Lisi();
     private boolean flag =false;
+    ////////////////////////////////
 
     public static void main(String []args){
         ThreadDeadlock t1 =new ThreadDeadlock();
