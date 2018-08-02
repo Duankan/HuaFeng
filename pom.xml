@@ -3,7 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>groupId</groupId>
     <artifactId>HuaFengGit</artifactId>
     <packaging>pom</packaging>
@@ -41,4 +40,210 @@
         </snapshotRepository>
     </distributionManagement>
 
+    <properties>
+        <!--控制版本-->
+        <dom4j.version>1.6.1</dom4j.version>
+        <junit.version>4.11</junit.version>
+        <spring-core.version>4.0.2.RELEASE</spring-core.version>
+        <spring-web.version>4.0.2.RELEASE</spring-web.version>
+        <spring-oxm.version>4.0.2.RELEASE</spring-oxm.version>
+        <spring-tx.version>4.0.2.RELEASE</spring-tx.version>
+        <spring-jdbc.version>4.0.2.RELEASE</spring-jdbc.version>
+        <spring-webmvc.version>4.0.2.RELEASE</spring-webmvc.version>
+        <spring-aop.version>4.0.2.RELEASE</spring-aop.version>
+        <spring-context-support.version>4.0.2.RELEASE</spring-context-support.version>
+        <spring-test.version>4.0.2.RELEASE</spring-test.version>
+        <mybatis.version>3.2.8</mybatis.version>
+        <mybatis-spring.version>1.2.2</mybatis-spring.version>
+        <pagehelper.version>5.1.4</pagehelper.version>
+        <javaee-api.version>7.0</javaee-api.version>
+        <mysql-connector-java.version>5.1.30</mysql-connector-java.version>
+        <commons-dbcp.version>1.4</commons-dbcp.version>
+        <javax.servlet-api.version>3.0.1</javax.servlet-api.version>
+        <jsp-api.version>2.1</jsp-api.version>
+        <jstl.version>1.2</jstl.version>
+        <log4j.version>1.2.17</log4j.version>
+        <fastjson.version>1.1.41</fastjson.version>
+        <slf4j-api.version>1.7.7</slf4j-api.version>
+        <slf4j-log4j12.version>1.7.7</slf4j-log4j12.version>
+        <jackson-mapper-asl.version>1.9.13</jackson-mapper-asl.version>
+        <commons-fileupload.version>1.3.1</commons-fileupload.version>
+        <commons-io.version>2.4</commons-io.version>
+        <commons-codec.version>1.9</commons-codec.version>
+    </properties>
+    <!--预定义依赖项-->
+    <dependencyManagement>
+        <dependencies>
+
+            <!--测试jar包上传到nexus-->
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>${dom4j.version}</version>
+            </dependency>
+            <!--提供ssm依赖-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <!-- 表示开发的时候引入，发布的时候不会加载此包 -->
+                <scope>test</scope>
+            </dependency>
+            <!-- spring核心包 -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>4.0.2.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-oxm</artifactId>
+                <version>${spring-oxm.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${spring-tx.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring-jdbc.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring-webmvc.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${spring-aop.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context-support</artifactId>
+                <version>4.0.2.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring-test.version}</version>
+            </dependency>
+            <!-- mybatis核心包 -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <!-- mybatis/spring包 -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis-spring.version}</version>
+            </dependency>
+            <!--mybatis分页-->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>${pagehelper.version}</version>
+            </dependency>
+            <!-- 导入java ee jar 包 -->
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>${javaee-api.version}</version>
+            </dependency>
+            <!-- 导入Mysql数据库链接jar包 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+            <!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->
+            <dependency>
+                <groupId>commons-dbcp</groupId>
+                <artifactId>commons-dbcp</artifactId>
+                <version>${commons-dbcp.version}</version>
+            </dependency>
+            <!-- JSTL标签类 -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.0.1</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet.jsp</groupId>
+                <artifactId>jsp-api</artifactId>
+                <version>${jsp-api.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+                <version>${jstl.version}</version>
+            </dependency>
+            <!-- 日志文件管理包 -->
+            <!-- log start -->
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+
+            <!-- 格式化对象，方便输出日志 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j-api.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${slf4j-log4j12.version}</version>
+            </dependency>
+            <!-- log end -->
+            <!-- 映入JSON -->
+            <dependency>
+                <groupId>org.codehaus.jackson</groupId>
+                <artifactId>jackson-mapper-asl</artifactId>
+                <version>${jackson-mapper-asl.version}</version>
+            </dependency>
+            <!-- 上传组件包 -->
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons-fileupload.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
