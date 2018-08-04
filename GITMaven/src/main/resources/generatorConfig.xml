@@ -31,8 +31,8 @@
         </javaModelGenerator>
         <!--生成SQLMAPPER文件 -->
         <sqlMapGenerator
-                targetPackage="com.github.Duankan.mapper"
-                targetProject="E:\workspace\HuaFengGit\GITMaven\src\main\java">
+                targetPackage="mapper"
+                targetProject="E:\workspace\HuaFengGit\GITMaven\src\main\resources">
             <property name="enableSubPackages" value="false" />
         </sqlMapGenerator>
         <!--生成Dao文件 -->
@@ -42,6 +42,6 @@
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
         <!--对应的表名-->
-        <table tableName="user"  domainObjectName="UserPo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
+        <table tableName="permission"  domainObjectName="permissionPo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" ></table>
     </context>
 </generatorConfiguration>

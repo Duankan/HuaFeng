@@ -60,4 +60,29 @@
         <!-- 内存中的最大值 -->
         <property name="maxInMemorySize" value="40960" />
     </bean>
+
+    <!-- 开启Shiro注解 -->
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+    <aop:config proxy-target-class="true"></aop:config>
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
+    <!--配置异常处理-->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <!--表示捕获的异常-->
+                <prop key="org.apache.shiro.authz.UnauthorizedException">
+                    /unauthorized  <!--捕获该异常时跳转的路径-->
+                </prop>
+                <!--表示捕获的异常-->
+                <prop key="org.apache.shiro.authc.AuthenticationException">
+                    /unauthenticated  <!--捕获该异常时跳转的路径-->
+                </prop>
+                <prop key="org.apache.shiro.authc.IncorrectCredentialsException">
+                    /unauthenticated  <!--捕获该异常时跳转的路径-->
+                </prop>
+            </props>
+        </property>
+    </bean>
 </beans>

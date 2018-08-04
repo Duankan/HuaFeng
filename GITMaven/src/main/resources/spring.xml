@@ -17,4 +17,6 @@
 
     <!--引入Mybatis-->
     <import resource="spring-mybatis.xml"></import>
+    <!--引入shiro-->
+    <import resource="shiro.xml"></import>
 </beans>
