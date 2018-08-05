@@ -24,6 +24,16 @@
     </properties>
 
     <dependencies>
+        <!--redis依赖-->
+        <!--<dependency>-->
+            <!--<groupId>redis.client</groupId>-->
+            <!--<artifactId>jedis</artifactId>-->
+            <!--&lt;!&ndash;<version></version>&ndash;&gt;-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+        </dependency>
         <!--shiro依赖-->
         <dependency>
             <groupId>org.apache.shiro</groupId>
