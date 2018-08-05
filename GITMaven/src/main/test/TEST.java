@@ -65,5 +65,6 @@ public class TEST extends BaseTest{
 
         jedis.set("china", "这是个中文值");
         System.out.println(jedis.get("china"));
+        jedis.close();
     }
 }
